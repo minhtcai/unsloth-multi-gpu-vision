@@ -6,4 +6,4 @@ This is an extension from [cwpeng's](https://github.com/cwpeng-cn/unsloth-multi-
 3. The root cause seems to be related to gradient checkpointing  
 4. Can run with DeepSpeed.
 5. Tested of 2x L4
-6. Working with GRPO for VL model.  
+6. Working on GRPO for VL model.  
