@@ -1,0 +1,6 @@
+datasets==4.2.0
+transformers==4.57.1 
+trl==0.23.0
+unsloth==2025.10.12
+numpy<1.28.0,>=1.21.6
+scipy>=1.10.0,<1.14.0
