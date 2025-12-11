@@ -102,6 +102,7 @@ model, tokenizer = FastVisionModel.from_pretrained(
     # load_in_8bit=False,
     use_gradient_checkpointing="unsloth",
     device_map=device_map,
+    # load_in_fp8 = True, # Float8 RL / GRPO!
     # full_finetuning = True,
 )
 
@@ -187,6 +188,8 @@ trainer = SFTTrainer(
         gradient_checkpointing=False,  # Using Unsloth's checkpointing instead
         ddp_find_unused_parameters=False,  # Important for LoRA + checkpointing
         # eos_token=tokenizer.eos_token,
+        packing = True,
+        # unsloth_tiled_mlp = True, => long context training
         dataloader_num_workers = 24,  # More workers for image processing
         dataloader_pin_memory = True,  # Faster CPU→GPU transfer
         dataloader_prefetch_factor = 24,  # Prefetch more batches
